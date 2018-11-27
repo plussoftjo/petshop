@@ -45,7 +45,7 @@ class proudctController extends Controller
 
         $imageData = $request->get('image');
         $fileName = Carbon::now()->timestamp . '_' . uniqid() . '.' . explode('/', explode(':', substr($imageData, 0, strpos($imageData, ';')))[1])[1];
-        Image::make($request->get('image'))->resize(650,750)->save(public_path('images/proudct/').$fileName);
+        Image::make($request->get('image'))->resize(1200,950)->save(public_path('images/proudct/').$fileName);
         $proudct = proudct::create([
             'title' => $request->title,
             'weight' => $request->weight,
@@ -100,7 +100,7 @@ class proudctController extends Controller
         }
         $imageData = $request->get('image');
         $fileName = Carbon::now()->timestamp . '_' . uniqid() . '.' . explode('/', explode(':', substr($imageData, 0, strpos($imageData, ';')))[1])[1];
-        Image::make($request->get('image'))->resize(650,750)->save(public_path('images/proudct/').$fileName);
+        Image::make($request->get('image'))->resize(1200,950)->save(public_path('images/proudct/').$fileName);
 
         proudct::where('id',$id)->update(['image' => 'images/proudct/'. $fileName]);
 
@@ -120,7 +120,7 @@ class proudctController extends Controller
         }
         $imageData = $request->get('image');
         $fileName = Carbon::now()->timestamp . '_' . uniqid() . '.' . explode('/', explode(':', substr($imageData, 0, strpos($imageData, ';')))[1])[1];
-        Image::make($request->get('image'))->resize(650,750)->save(public_path('images/moreImage/').$fileName);
+        Image::make($request->get('image'))->resize(1200,950)->save(public_path('images/moreImage/').$fileName);
 
        $mi =  moreImage::create(['proudct_id' => $id, 'image' => 'images/moreImage/'.$fileName]);
         return response()->json(['image' => 'images/moreImage/' . $fileName,'id' => $mi->id]);

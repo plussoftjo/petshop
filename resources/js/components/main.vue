@@ -57,6 +57,8 @@
 		        items: [
 		          { title: 'Main', icon: 'dashboard',at:'main' },
 		          { title: 'Proudct', icon: 'question_answer',at:"proudct" },
+		          { title: 'Slider', icon: 'question_answer',at:"slider" },
+		          { title: 'Catg', icon: 'question_answer',at:"catg" },
 		        ],
 		        right: null,
 		        
