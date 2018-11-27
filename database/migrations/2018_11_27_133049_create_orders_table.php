@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
             $table->string('phone');
             $table->string('city');
             $table->string('address');
-            $tabke->boolean('done')->default(0);
+            $table->boolean('done')->default(0);
             $table->timestamps();
         });
     }
